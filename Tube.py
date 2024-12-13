@@ -1,5 +1,6 @@
 import pygame.draw
 
+
 class Tube:
     def __init__(self):
         self.x = 1010
@@ -9,9 +10,16 @@ class Tube:
         self.width = 50
         self.height = 200
         self.speed = 10
+
     def display(self, screen):
         pygame.draw.rect(screen, (225, 225, 225), (self.x, self.y, self.width, self.height))
         pygame.draw.rect(screen, (225, 225, 225), (self.x2, self.y2, self.width, self.height))
+
     def move(self):
         self.x -= self.speed
         self.x2 -= self.speed
+
+    def teleportation(self):
+        if self.x == -60 and self.x2 == -60:
+            self.x = 1010
+            self.x2 = 1010

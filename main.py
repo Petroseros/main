@@ -16,10 +16,17 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 character.jump()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                running = False
     screen.fill((0, 0, 0))
     character.move()
     character.display(screen)
     tube.move()
     tube.display(screen)
+    tube.teleportation()
+    tube1.move()
+    tube1.display(screen)
+    tube1.teleportation()
     pygame.display.flip()
     clock.tick(10)
