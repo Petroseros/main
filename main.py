@@ -3,11 +3,12 @@ import pygame
 from Character import Character
 from Tube import Tube
 a = 0
-screen = pygame.display.set_mode((1000, 600))
+screen = pygame.display.set_mode((1800, 600))
 clock = pygame.time.Clock()
 character = Character()
-tube = Tube(1000)
-tube1 = Tube(1500)
+tube = Tube(1850)
+tube1 = Tube(2450)
+tube2 = Tube(3050)
 running = True
 while running:
     for event in pygame.event.get():
@@ -35,6 +36,13 @@ while running:
     tube1.display(screen)
     tube1.teleportation()
     if tube1.tunumber():
+        a += 1
+        print(a)
+
+    tube2.move()
+    tube2.display(screen)
+    tube2.teleportation()
+    if tube2.tunumber():
         a += 1
         print(a)
 
