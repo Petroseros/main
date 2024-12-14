@@ -2,7 +2,6 @@ import pygame
 
 from Character import Character
 from Tube import Tube
-
 a = 0
 screen = pygame.display.set_mode((1000, 600))
 clock = pygame.time.Clock()
@@ -28,16 +27,16 @@ while running:
     tube.move()
     tube.display(screen)
     tube.teleportation()
+    if tube.tunumber():
+        a += 1
+        print(a)
 
     tube1.move()
     tube1.display(screen)
     tube1.teleportation()
-
-    if tube.tunumber():
-        a += 1
-        print(a)
     if tube1.tunumber():
         a += 1
         print(a)
+
     pygame.display.flip()
     clock.tick(50)

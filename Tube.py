@@ -28,7 +28,7 @@ class Tube:
             self.height2 = 600 - self.y2
 
     def tunumber(self):
-        if 475<self.x<525:
+        if self.x==470:
             return True
         else:
             return False
