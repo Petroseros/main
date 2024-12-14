@@ -16,9 +16,3 @@ class Character:
 
     def jump(self):
         self.speed = -15
-
-    def death(self):
-        if self.y==0 or self.y==550:
-            return True
-        else:
-            return False
