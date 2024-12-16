@@ -1,6 +1,6 @@
 import pygame.draw
 
-class Character:
+class Bird:
     def __init__(self):
         self.x = 400
         self.y = 280

@@ -1,11 +1,11 @@
 import pygame
 
-from Character import Character
+from flappy_bird.Bird import Bird
 from Tube import Tube
 a = 0
 screen = pygame.display.set_mode((1800, 600))
 clock = pygame.time.Clock()
-character = Character()
+bird = Bird()
 tube = Tube(1850)
 tube1 = Tube(2450)
 tube2 = Tube(3050)
@@ -16,14 +16,14 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                character.jump()
+                bird.jump()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False
     screen.fill((0, 0, 0))
 
-    character.move()
-    character.display(screen)
+    bird.move()
+    bird.display(screen)
 
     tube.move()
     tube.display(screen)
