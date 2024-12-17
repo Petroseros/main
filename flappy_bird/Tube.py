@@ -13,8 +13,8 @@ class Tube:
         self.height2 = 200
 
     def display(self, screen):
-        pygame.draw.rect(screen, (225, 225, 225), (self.x, self.y, self.width, self.height))
-        pygame.draw.rect(screen, (225, 225, 225), (self.x, self.y2, self.width, self.height2))
+        pygame.draw.rect(screen, (0, 255, 0), (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(screen, (0, 255, 0), (self.x, self.y2, self.width, self.height2))
 
     def move(self):
         self.x -= self.speed

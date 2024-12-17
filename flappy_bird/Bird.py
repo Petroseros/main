@@ -8,7 +8,7 @@ class Bird:
         self.speed = 1
 
     def display(self, screen):
-        pygame.draw.rect(screen, (212, 181, 206), (self.x, self.y, self.side, self.side))
+        pygame.draw.rect(screen, (255, 255, 0), (self.x, self.y, self.side, self.side))
 
     def move(self):
         self.y += self.speed

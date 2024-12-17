@@ -12,7 +12,6 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False
-    screen.fill((255, 255, 255))
 
     cvet.display(screen)
     cvet.move()
