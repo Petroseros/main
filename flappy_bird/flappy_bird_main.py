@@ -20,7 +20,7 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False
-    screen.fill((0, 0, 255))
+    screen.fill((73, 178, 216))
 
     bird.move()
     bird.display(screen)
