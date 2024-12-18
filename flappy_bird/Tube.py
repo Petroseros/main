@@ -2,6 +2,7 @@ import pygame.draw
 
 import random
 
+
 class Tube:
     def __init__(self, x):
         self.x = x
@@ -28,7 +29,7 @@ class Tube:
             self.height2 = 600 - self.y2
 
     def tunumber(self):
-        if self.x==400:
+        if self.x == 400:
             return True
         else:
             return False

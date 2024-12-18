@@ -1,5 +1,6 @@
 import pygame.draw
 
+
 class Bird:
     def __init__(self):
         self.x = 400
