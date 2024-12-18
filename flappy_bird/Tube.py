@@ -12,24 +12,33 @@ class Tube:
         self.y2 = 400
         self.height = 200
         self.height2 = 200
+        self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+        self.rect2 = pygame.Rect(self.x, self.y2, self.width, self.height2)
 
     def display(self, screen):
-        pygame.draw.rect(screen, (33, 128, 61), (self.x, self.y, self.width, self.height))
-        pygame.draw.rect(screen, (33, 128, 61), (self.x, self.y2, self.width, self.height2))
+        pygame.draw.rect(screen, (33, 128, 61), self.rect)
+        pygame.draw.rect(screen, (33, 128, 61), self.rect2)
 
     def move(self):
-        self.x -= self.speed
+        self.rect.x -= self.speed
 
     def teleportation(self):
-        if self.x == -50:
-            self.x = 1850
-            self.y2 = random.randint(100, 500)
-            self.y = 0
-            self.height = self.y2 - 200
-            self.height2 = 600 - self.y2
+        if self.rect.x == -50:
+            self.rect.x = 1850
+            self.rect2.x = 1850
+            self.rect2.y = random.randint(100, 500)
+            self.rect.y = 0
+            self.rect.height = self.rect2.y - 200
+            self.rect2.height = 600 - self.rect2.y
 
     def tunumber(self):
         if self.x == 400:
+            return True
+        else:
+            return False
+
+    def death(self,bird):
+        if self.rect.colliderect(bird.rect) or self.rect2.colliderect(bird.rect):
             return True
         else:
             return False
