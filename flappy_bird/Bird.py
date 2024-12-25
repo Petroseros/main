@@ -10,11 +10,17 @@ class Bird:
         self.rect = pygame.Rect(self.x, self.y, self.side, self.side)
 
     def display(self, screen):
-        pygame.draw.rect(screen, (255, 255, 0), (self.x, self.y, self.side, self.side))
+        pygame.draw.rect(screen, (255, 255, 0), self.rect)
 
     def move(self):
-        self.y += self.speed
+        self.rect.y += self.speed
         self.speed += 1
 
     def jump(self):
         self.speed = -15
+
+    def death(self,tubes):
+        for tube in tubes:
+            if self.rect.colliderect(tube.rect) or self.rect.y == 40 or self.rect.y == 560:
+                return True
+        return False

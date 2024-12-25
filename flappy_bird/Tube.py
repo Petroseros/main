@@ -2,7 +2,6 @@ import pygame.draw
 
 import random
 
-
 class Tube:
     def __init__(self, x):
         self.x = x
@@ -21,6 +20,7 @@ class Tube:
 
     def move(self):
         self.rect.x -= self.speed
+        self.rect2.x -= self.speed
 
     def teleportation(self):
         if self.rect.x == -50:
@@ -32,13 +32,7 @@ class Tube:
             self.rect2.height = 600 - self.rect2.y
 
     def tunumber(self):
-        if self.x == 400:
-            return True
-        else:
-            return False
-
-    def death(self,bird):
-        if self.rect.colliderect(bird.rect) or self.rect2.colliderect(bird.rect):
+        if self.rect.x == 400:
             return True
         else:
             return False
