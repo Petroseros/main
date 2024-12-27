@@ -59,8 +59,6 @@ while running:
             a += 1
             text = fOnt.render(str(a), True, (0, 0, 0))
 
-            screen.fill((73, 178, 216))
-            screen.blit(text, (0, 0))
 
     pygame.display.flip()
     clock.tick(50)
