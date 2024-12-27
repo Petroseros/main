@@ -50,6 +50,8 @@ while running:
     bird.display(screen)
     if bird.death(tubes):
         running = False
+        print("ТЫ УМЕР!")
+        print("пройдено труб:",a)
 
     for tube in tubes:
         tube.move()
@@ -58,7 +60,6 @@ while running:
         if tube.tunumber():
             a += 1
             text = fOnt.render(str(a), True, (0, 0, 0))
-
 
     pygame.display.flip()
     clock.tick(50)
