@@ -6,14 +6,16 @@ from Cloud import Cloud
 a = 0
 screen = pygame.display.set_mode((1800, 600))
 clock = pygame.time.Clock()
-font = pygame.font.SysFont("comicsans", 30)
-follow = font.render(str(a), True, (255, 255, 255), (0, 0, 0))
+pygame.display.set_caption("Flappy bird")
+fOnt = pygame.font.SysFont(None, 36)
+text = fOnt.render(str(a), True, (0, 0, 0))
 
 bird = Bird()
 
 tube1 = Tube(1800)
 tube2 = Tube(2400)
 tube3 = Tube(3000)
+tubes = [tube1,tube2,tube3]
 
 cloud1 = Cloud(1800)
 cloud2 = Cloud(2100)
@@ -21,14 +23,14 @@ cloud3 = Cloud(2400)
 cloud4 = Cloud(2700)
 cloud5 = Cloud(3000)
 cloud6 = Cloud(3300)
-
 clouds = [cloud1, cloud2, cloud3, cloud4, cloud5, cloud6]
-tubes = [tube1,tube2,tube3]
 
 running = True
 while running:
-    screen.blit(follow, (0, 0))
-    pygame.display.update()
+
+    screen.fill((73, 178, 216))
+    screen.blit(text, (0, 0))
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -38,8 +40,6 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False
-
-    screen.fill((73, 178, 216))
 
     for cloud in clouds:
         cloud.move()
@@ -57,7 +57,10 @@ while running:
         tube.teleportation()
         if tube.tunumber():
             a += 1
-            print(a)
+            text = fOnt.render(str(a), True, (0, 0, 0))
+
+            screen.fill((73, 178, 216))
+            screen.blit(text, (0, 0))
 
     pygame.display.flip()
     clock.tick(50)

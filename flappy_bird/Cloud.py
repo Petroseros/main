@@ -18,7 +18,7 @@ class Cloud:
         self.x -= self.speed
 
     def teleportation(self):
-        if self.x == -50:
+        if self.x == self.width * -1:
             self.x = 1800
             self.y = random.randint(30, 100)
             self.width = random.randint(50, 200)

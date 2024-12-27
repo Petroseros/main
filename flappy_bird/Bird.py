@@ -21,6 +21,6 @@ class Bird:
 
     def death(self,tubes):
         for tube in tubes:
-            if self.rect.colliderect(tube.rect) or self.rect.y == 40 or self.rect.y == 560:
+            if self.rect.colliderect(tube.rect) or self.rect.y <= 0 or self.rect.y >= 560:
                 return True
         return False
