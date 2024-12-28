@@ -1,8 +1,8 @@
 import pygame
-pygame.init()
 from flappy_bird.Bird import Bird
-from Tube import Tube
-from Cloud import Cloud
+from flappy_bird.Tube import Tube
+from flappy_bird.Cloud import Cloud
+pygame.init()
 a = 0
 screen = pygame.display.set_mode((1800, 600))
 clock = pygame.time.Clock()

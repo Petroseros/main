@@ -1,5 +1,4 @@
 import pygame.draw
-
 import random
 
 class Tube:

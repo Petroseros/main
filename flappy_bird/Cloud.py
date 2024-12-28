@@ -1,7 +1,5 @@
 import pygame.draw
-
 import random
-
 
 class Cloud:
     def __init__(self,x):
